@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Backbone</title>
+    <script type="application/javascript" src="vendor/jq.js"></script>
+    <script type="application/javascript" src="vendor/_.js"></script>
+    <script type="application/javascript" src="vendor/bb.js"></script>
+    <script>
+        $(document).ready(function(){
+            var model = new Backbone.Model({
+                name: ''
+            });
+
+            model.on('change:name', function(){
+                $('#myName').html(model.get('name'));
+            });
+
+            $('#myNameInput').on('keyup', function(){
+                model.set('name', $('#myNameInput').val());
+            });
+        });
+    </script>
+</head>
+<body>
+<label>Как вас зовут?</label>
+<input type="text" id="myNameInput" placeholder="введите имя">
+<h1>Привет <span id="myName"></span>!</h1>
+</ul>
+</body>
+</html>
