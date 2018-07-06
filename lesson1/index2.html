@@ -1,31 +1,79 @@
-<!DOCTYPE html>
+    <!---->
+    <!--<script>-->
+        <!--$(document).ready(function(){-->
+            <!---->
+            <!--model.on('change:name', function(){-->
+                <!--$('#myName').html(model.get('name'));-->
+            <!--});-->
+
+            <!--$('#myNameInput').on('keyup', function(){-->
+                <!--model.set('name', $('#myNameInput').val());-->
+            <!--});-->
+        <!--});-->
+    <!--</script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<label>Как вас зовут?</label>-->
+<!--<input type="text" id="myNameInput" placeholder="введите имя">-->
+<!--<h1>Привет <span id="myName"></span>!</h1>-->
+<!--</ul>-->
+<!--</body>-->
+
+
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Backbone</title>
     <script type="application/javascript" src="vendor/jq.js"></script>
     <script type="application/javascript" src="vendor/_.js"></script>
     <script type="application/javascript" src="vendor/bb.js"></script>
-    <script>
-        $(document).ready(function(){
-            var model = new Backbone.Model({
-                name: ''
-            });
-
-            model.on('change:name', function(){
-                $('#myName').html(model.get('name'));
-            });
-
-            $('#myNameInput').on('keyup', function(){
-                model.set('name', $('#myNameInput').val());
-            });
+    <meta charset="utf-8">
+    <script type="application/javascript">
+      $(document).ready(function () {
+        var model = new Backbone.Model({
+          name: ''
         });
+
+        model.on('change:name', function(){
+          $('#myName').html(model.get('name'));
+        });
+
+        $('#myNameInput').on('keyup', function(){
+          model.set('name', $('#myNameInput').val());
+        });
+
+        $('#myDateInput').on('change', function () {
+          var birthDay = ($('#myDateInput').val()).slice(5);
+          if (birthDay === currentDate) {
+            $('#congrat').css('display', 'inline')
+          } else {
+            $('body').html('<img src="https://vignette.wikia.nocookie.net/absurdopedia/images/b/bf/%D0%93%D1%80%D1%83%D1%81%D1%82%D0%BD%D1%8B%D0%B9_%D1%81%D0%BC%D0%B0%D0%B9%D0%BB%D0%B8%D0%BA.jpg/revision/latest?cb=20140420114726" alt=""> ')
+          }
+        });
+
+        var fullDate = new Date;
+        var month = fullDate.getMonth();
+        month += 1;
+        if (month < 10) {
+          month = '0' + month
+        }
+        var day = fullDate.getDate();
+        if (day < 10) {
+          day = '0' + day
+        }
+        var currentDate = month + '-' + day;
+
+      });
     </script>
 </head>
 <body>
-<label>Как вас зовут?</label>
-<input type="text" id="myNameInput" placeholder="введите имя">
-<h1>Привет <span id="myName"></span>!</h1>
-</ul>
+<div>
+    <input type="text" id="myNameInput" placeholder="Введите ваше имя"><br>
+    <label>Введите вашу дату рождения</label>
+    <input type="date" id="myDateInput"><br>
+    <h1 id="congrat" style="display: none">C Днем Рождения, <span id="myName"></span>!!!</h1>
+
+</div>
 </body>
 </html>
+
