@@ -1,25 +1,3 @@
-    <!---->
-    <!--<script>-->
-        <!--$(document).ready(function(){-->
-            <!---->
-            <!--model.on('change:name', function(){-->
-                <!--$('#myName').html(model.get('name'));-->
-            <!--});-->
-
-            <!--$('#myNameInput').on('keyup', function(){-->
-                <!--model.set('name', $('#myNameInput').val());-->
-            <!--});-->
-        <!--});-->
-    <!--</script>-->
-<!--</head>-->
-<!--<body>-->
-<!--<label>Как вас зовут?</label>-->
-<!--<input type="text" id="myNameInput" placeholder="введите имя">-->
-<!--<h1>Привет <span id="myName"></span>!</h1>-->
-<!--</ul>-->
-<!--</body>-->
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -34,11 +12,11 @@
           name: ''
         });
 
-        model.on('change:name', function(){
+        model.on('change:name', function () {
           $('#myName').html(model.get('name'));
         });
 
-        $('#myNameInput').on('keyup', function(){
+        $('#myNameInput').on('keyup', function () {
           model.set('name', $('#myNameInput').val());
         });
 
