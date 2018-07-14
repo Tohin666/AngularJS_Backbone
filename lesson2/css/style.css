@@ -1,0 +1,40 @@
+body {
+    padding-top: 100px;
+}
+.container {
+    margin: 0 auto;
+    width: 500px;
+}
+.new-good {
+    border: #0E0F10 1px solid;
+    padding: 5px;
+}
+table {
+    background: #fff;
+    border: 1px solid #788D8E;
+    margin: 0 auto;
+    width: 100%;
+}
+table tr:first-child {
+    background-color: #ccc;
+}
+td{
+    border: #0F1214 solid;
+    border-width: 0 1px;
+    padding: 5px 8px;
+}
+th{
+    background: #9EA3A3;
+    border: #0F1214 solid;
+    border-width: 0 1px;
+    padding: 5px 8px;
+}
+h1 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 5px;
+    color: #993333;
+}
+.inputAmount {
+    width: 30px;
+}
