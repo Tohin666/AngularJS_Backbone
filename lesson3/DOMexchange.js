@@ -12,6 +12,12 @@ function getID(ID) {
   var element = document.getElementById(ID);
   return element
 }
+// function getID(ID) {
+//   var element = document.getElementById(ID);
+//   var elements = [];
+//   elements.push(element);
+//   return elements
+// }
 
 /**
  * Method allows to get elements from DOM by class.
