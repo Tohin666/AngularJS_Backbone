@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cart" ng-controller="mainController">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="DOMexchange.js"></script>
+    <script src="test.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="new-good">
+        <h2>Новый товар:</h2>
+        <br>
+        Наименование:
+        <input type="text">
+        <br><br>
+        Выбрать категорию:
+        <select name="selectCategory" id="selectCategory">
+            <option value="item">item</option>
+        </select>
+        <!--<select name="selectCategory" id="selectCategory2">-->
+            <!--<option value="item">item</option>-->
+        </select><br>
+        Создать категорию:
+        <input type="text">
+        <button type="button">Создать</button>
+        <br><br>
+        Цена:
+        <input type="text" class="inputAmount">
+        <br><br>
+        <button type="button">Создать товар</button>
+    </div>
+    <br><br>
+    <h1>Каталог товаров</h1>
+    <table>
+        <tr>
+            <td>Наименование</td>
+            <td>Категория</td>
+            <td>Цена</td>
+            <td>Количество</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>category</td>
+            <td>price</td>
+            <td><input type="text" class="inputAmount"></td>
+            <td>
+                <button type="button"">Купить</button>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+    <h1>Корзина</h1>
+    <table>
+        <tr>
+            <td>Наименование</td>
+            <td>Категория</td>
+            <td>Цена</td>
+            <td>Количество</td>
+            <td>Сумма</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>category</td>
+            <td>price</td>
+            <td>amount</td>
+            <td>price</td>
+        </tr>
+    </table>
+    <br>
+    Итого: Total руб
+</div>
+</body>
+</html>
