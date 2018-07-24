@@ -20,10 +20,7 @@ $(function () {
                 var thisView = this;
                 thisView.itemsList = new ItemsList();
                 _.bindAll(thisView, 'render');
-                // thisView.itemsList.bind("add", function (model) {
-                //     console.info('item added');
-                //     thisView.render(model)
-                // })
+
             },
             addItemToList: function () {
                 var inputField1 = $('#itemInput1');
