@@ -23,18 +23,20 @@ $(function () {
 
             },
             addItemToList: function () {
-                var inputField1 = $('#itemInput1');
-                var inputField2 = $('#itemInput2');
-                var inputField3 = $('#itemInput3');
-                var itemValue1 = '<td>'+inputField1.val()+'</td>';
-                var itemValue2 = '<td>'+inputField2.val()+'</td>';
-                var itemValue3 = '<td>'+inputField3.val()+'</td>';
+                var inputField1 = getID('itemInput1');
+                var inputField2 = getID('itemInput2');
+                var inputField3 = getID('itemInput3');
+                var itemValue1 = '<td>' + inputField1.value + '</td>';
+                var itemValue2 = '<td>' + inputField2.value + '</td>';
+                var itemValue3 = '<td>' + inputField3.value + '</td>';
                 var itemValue = itemValue1 + itemValue2 + itemValue3;
                 this.itemsList.add({myValue: itemValue})
             },
             render: function (model) {
-                var itemListElement = $('#my-list');
-                itemListElement.append('<tr>'+model.get('myValue')+'</tr>');
+                var itemListElement = getID('my-list');
+                var tr = document.createElement('tr');
+                tr.innerHTML = model.get('myValue');
+                itemListElement.appendChild(tr);
                 console.log('item added');
             }
 
